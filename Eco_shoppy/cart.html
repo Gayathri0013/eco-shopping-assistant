@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart - Eco Shopping Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://img.freepik.com/free-photo/greenery-frame-watercolor-green_53876-105303.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #90ee90;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(46, 240, 208, 0.379);
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      color: #222;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      color: #222;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      background-color: #56b887;
+      color: white;
+    }
+    .empty-msg {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 50px 0;
+      color: #56b887;
+    }
+    @media (max-width: 600px) {
+      th, td {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="Main.html">Home</a>
+    <a href="cart.html">Cart</a>
+    <a href="orders.html">Orders</a>
+    <a href="account.html">Account</a>
+  </nav>
+  <header>
+    <h1>Your Shopping Cart</h1>
+  </header>
+
+  <div class="content">
+    <div class="empty-msg">
+      Your cart is empty. Start adding eco-friendly products to your cart!
+    </div>
+  </div>
+</body>
+</html>

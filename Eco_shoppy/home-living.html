@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home & Living - Eco Shopping Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://img.freepik.com/free-photo/greenery-frame-watercolor-green_53876-105303.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #90ee90;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(46, 240, 208, 0.379);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.4);
+    }
+    .card img {
+      width: 100%;
+      max-height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .card p {
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+    @media (max-width: 900px) {
+      .columns {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="Main.html">Home</a>
+    <a href="#">Cart</a>
+    <a href="#">Orders</a>
+    <a href="#">Account</a>
+  </nav>
+<div style="padding: 20px; text-align: center;">
+  <a href="Main.html" 
+     style="
+       display: inline-block;
+       background: rgba(56, 142, 60, 0.8);
+       color: white;
+       text-decoration: none;
+       padding: 10px 22px;
+       border-radius: 12px;
+       font-weight: bold;
+       transition: background 0.3s ease;
+     "
+     onmouseover="this.style.background='rgba(56, 142, 60, 1)';"
+     onmouseout="this.style.background='rgba(56, 142, 60, 0.8)';"
+  >
+    ← Back to Home
+  </a>
+</div>
+
+  <header>
+    <h1>Home & Living</h1>
+    <p>Eco-friendly home essentials and décor for a sustainable lifestyle.</p>
+  </header>
+  <section class="columns">
+    <div class="card">
+      <img src="https://imgs.search.brave.com/w0q4f6Qtb8FWu9GXP3dlJeNnn7j5anvphD_Y17uLgiY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/a2l0Y2hlbmtuaWZl/Z3VydS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjMvMTAv/SU1HXzM3NDFfZWQy/YV83NjAud2VicA" alt="Bamboo Cutting Board" />
+      <h2>Bamboo Cutting Board</h2>
+      <p>Durable, eco-friendly cutting board made from sustainably harvested bamboo.</p>
+    </div>
+    <div class="card">
+      <img src="https://imgs.search.brave.com/8Qyy00wy9gLGzVw0_KPR-h8Igus7WaCyk8X0BxMjTJQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dmlsbGFnZXRocml2/ZS5jb20vY2RuL3No/b3AvcHJvZHVjdHMv/QmFsaUludGVyb2ly/cy1WaWxsYWdlVGhy/aXZlX01hcmNoXy04/XzEyNTB4MTg3NC5q/cGc_dj0xNjUxMDA2/MTY1" alt="Organic Cotton Throw Pillow" />
+      <h2>Organic Cotton Throw Pillow</h2>
+      <p>Comfortable pillow crafted with organic cotton and natural dyes.</p>
+    </div>
+    <div class="card">
+      <img src="https://imgs.search.brave.com/V-FgbGuAfwn7lVXaSOXzKwoI9UDcauGHK_4m4iPt94o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/Lzk1MzA5MzIvci9p/bC84NzlhMmEvNTI0/MjIwODAwNy9pbF82/MDB4NjAwLjUyNDIy/MDgwMDdfaTE3aS5q/cGc" alt="Recycled Glass Vase" />
+      <h2>Recycled Glass Vase</h2>
+      <p>Stylish vase made from 100% recycled glass, perfect for any décor.</p>
+    </div>
+    <div class="card">
+      <img src="https://imgs.search.brave.com/SXIvrBwIOV5KlBMR8ie3WnFOj4YP6qLvMfsW91HJefU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzE2NDEzMDk3L3Iv/aWwvYjM0MzNiLzMy/MTM4NDczMjIvaWxf/MzAweDMwMC4zMjEz/ODQ3MzIyXzRsa2Yu/anBn" alt="Natural Jute Rug" />
+      <h2>Natural Jute Rug</h2>
+      <p>Eco-friendly and biodegradable rug made from natural jute fibers.</p>
+    </div>
+    <div class="card">
+      <img src="https://imgs.search.brave.com/kkK53GRAsuAe8NroSEPsoDYds7AcNvJBJ8FS1Ye9Cc8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzMyOTEyNjExL3Iv/aWwvMzIwZTZhLzM1/MjQ1MTA0NDEvaWxf/Nzk0eE4uMzUyNDUx/MDQ0MV9yOTNlLmpw/Zw" alt="Recycled Paper Lampshade" />
+      <h2>Recycled Paper Lampshade</h2>
+      <p>Decorative lampshade crafted from recycled paper materials.</p>
+    </div>
+    <div class="card">
+      <img src="https://imgs.search.brave.com/4WMQ99_QW77RxjedRL205JyEI-xxJYWPLnRmQRs_d24/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy1qNjAy/d2M2YS9pbWFnZXMv/c3RlbmNpbC81MDB4/NjU5L3Byb2R1Y3Rz/LzY2NDgvMjU4MDMv/RDhiTjg1UWhiV0Ux/WTFvTm9xR0ZMcHlh/WnoyVVVOcGZSbzVS/eVZad1FzR1E0eEFk/M29jWmtSODhtaExP/YU9aRl9fMTkwMTYu/MTcxMjI2NzY1MS5q/cGc_Yz0y" alt="Bamboo Utensil Set" />
+      <h2>Bamboo Utensil Set</h2>
+      <p>Reusable utensils made from sustainable bamboo, perfect for daily use.</p>
+    </div>
+    <div class="card">
+      <img src="https://imgs.search.brave.com/FuKFT0feuu7gRFhIzEhKjJ787CzdThNVBHTeRbfVMCg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzE1MzM1MjM4L3Iv/aWwvODNjZDk0LzQx/Mjk0Nzg4OTAvaWxf/NjAweDYwMC40MTI5/NDc4ODkwXzlhcHgu/anBn" alt="Organic Linen Curtains" />
+      <h2>Organic Linen Curtains</h2>
+      <p>Lightweight curtains made from organic linen fabric for eco-friendly homes.</p>
+    </div>
+    <div class="card">
+      <img src="https://imgs.search.brave.com/c-ndwJA2yVv1rPZhGjhxJeJAgbp9C71s9W8Dwf8nMW8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzE5ODg3NjI0L2Mv/MjAwMC8yMDAwLzAv/MC9pbC83NGE4YTYv/NDc3MTg2OTk1OS9p/bF82MDB4NjAwLjQ3/NzE4Njk5NTlfbXU2/Ny5qcGc" alt="Recycled Metal Candle Holder" />
+      <h2>Recycled Metal Candle Holder</h2>
+      <p>Elegant candle holder crafted from recycled metal materials.</p>
+    </div>
+  </section>
+</body>
+</html>

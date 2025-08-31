@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Orders - Eco Shopping Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://img.freepik.com/free-photo/greenery-frame-watercolor-green_53876-105303.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #90ee90;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(46, 240, 208, 0.379);
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      color: #222;
+      font-size: 1.1rem;
+      text-align: center;
+      padding-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="Main.html">Home</a>
+    <a href="cart.html">Cart</a>
+    <a href="orders.html">Orders</a>
+    <a href="account.html">Account</a>
+  </nav>
+  <header>
+    <h1>Your Orders</h1>
+  </header>
+
+  <div class="content">
+    <p>
+      You have no orders yet.<br />
+      Shop eco-friendly products and your orders will appear here.
+    </p>
+  </div>
+</body>
+</html>
