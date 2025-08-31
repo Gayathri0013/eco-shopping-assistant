@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Eco Shopping Assistant - Login/Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        /* Reset and full viewport */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            overflow: hidden; /* Prevent page scroll */
+        }
+        body {
+            display: flex;
+            justify-content: center; /* Horizontal center */
+            align-items: center;     /* Vertical center */
+            position: relative;
+            /* Background image */
+            background: url('https://bristlo.com/cdn/shop/articles/the-role-of-sustainable-packaging-in-reducing-plastic-waste-361372.png?v=1736693411&width=2048') center center / cover no-repeat;
+        }
+        /* White translucent overlay for readability */
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.4); /* More transparent as requested */
+            pointer-events: none;
+            z-index: -1;
+        }
+        /* Container for login/signup forms */
+        .container {
+            background: rgba(255, 255, 255, 0.80);
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(80, 180, 120, 0.50);
+            padding: 24px 50px;
+            max-width: 400px;
+            width: 120%;
+            margin-top: 35px;
+            margin-left: 80px;
+            margin-right: 120px;
+            max-height: calc(100vh - 40px); /* 20px margin top + bottom */
+            overflow-y: auto;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .leaf-icon {
+            display: block;
+            margin: 0 auto 16px;
+            height: 48px;
+            fill: #56b887;
+        }
+        h1 {
+            font-size: 1.6em;
+            color: #388e3c;
+            text-align: center;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .subtitle {
+            text-align: center;
+            color: #668e6c;
+            margin-bottom: 22px;
+            font-size: 1.08em;
+        }
+        .tab-btns {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+        .tab-btn {
+            background: #d2f7e3;
+            border: none;
+            padding: 9px 30px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #388e3c;
+            transition: background 0.2s;
+        }
+        .tab-btn.active {
+            background: #388e3c;
+            color: #fff;
+        }
+        form {
+            display: none;
+            flex-direction: column;
+            gap: 14px;
+        }
+        form.active {
+            display: flex;
+        }
+        label {
+            font-weight: 500;
+            color: #388e3c;
+            margin-bottom: 4px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 9px 10px;
+            border: 1px solid #b6d7b6;
+            border-radius: 8px;
+            background: #f5fcf7;
+            outline: none;
+            font-size: 1em;
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+            background: linear-gradient(90deg, #56b887, #388e3c);
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            padding: 11px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #e7f9ec;
+            letter-spacing: 1px;
+            font-size: 1.08em;
+        }
+        .form-footer {
+            text-align: center;
+            color: #668e6c;
+            font-size: 0.97em;
+            margin-top: 14px;
+        }
+        .error-msg {
+            color: #b14c4c;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            height: 18px;
+            text-align: center;
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 6vw;
+                margin: 10px;
+                width: 90%;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" role="main">
+        <svg
+            class="leaf-icon"
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+        >
+            <path
+                d="M32 12c-15 7-21 24-18 34 8-8 20-13 34-13 12 0 17 3 17 3C59 24 47 15 32 12zm0 0c12 3 27 13 27 37a4 4 0 0 1-4 4c-21 0-46-2-46-4C9 25 23 15 32 12z"
+            />
+        </svg>
+        <h1>Welcome to Eco Shopping Assistant</h1>
+        <div class="subtitle">Make sustainable choices &amp; track your eco impact</div>
+        <div class="tab-btns">
+            <button type="button" class="tab-btn active" id="login-tab">Login</button>
+            <button type="button" class="tab-btn" id="signup-tab">Sign Up</button>
+        </div>
+        <form id="login-form" aria-label="Login form" class="active">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" name="login-email" required placeholder="you@email.com" />
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="login-password" required placeholder="Your password" />
+            <div class="error-msg" id="login-error"></div>
+            <input type="submit" value="Log In" />
+            <div class="form-footer">Forgot your password?</div>
+        </form>
+        <form id="signup-form" aria-label="Sign up form">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" name="signup-name" required placeholder="Your full name" />
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="signup-email" required placeholder="you@email.com" />
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="signup-password" required placeholder="Choose a password" />
+            <label for="signup-confirm-password">Confirm Password</label>
+            <input
+                type="password"
+                id="signup-confirm-password"
+                name="signup-confirm-password"
+                required
+                placeholder="Confirm password"
+            />
+            <div class="error-msg" id="signup-error"></div>
+            <input type="submit" value="Create Account" />
+            <div class="form-footer">
+                Already an eco shopper? <span style="color:#388e3c; cursor:pointer;" id="switch-to-login">Log in</span>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Tab switching logic
+        const loginBtn = document.getElementById("login-tab");
+        const signupBtn = document.getElementById("signup-tab");
+        const loginForm = document.getElementById("login-form");
+        const signupForm = document.getElementById("signup-form");
+        const loginError = document.getElementById("login-error");
+        const signupError = document.getElementById("signup-error");
+        const switchToLoginLink = document.getElementById("switch-to-login");
+
+        function activateLogin() {
+            loginBtn.classList.add("active");
+            signupBtn.classList.remove("active");
+            loginForm.classList.add("active");
+            signupForm.classList.remove("active");
+            clearErrors();
+        }
+
+        function activateSignup() {
+            signupBtn.classList.add("active");
+            loginBtn.classList.remove("active");
+            signupForm.classList.add("active");
+            loginForm.classList.remove("active");
+            clearErrors();
+        }
+
+        function clearErrors() {
+            loginError.textContent = "";
+            signupError.textContent = "";
+        }
+
+        loginBtn.onclick = activateLogin;
+        signupBtn.onclick = activateSignup;
+        switchToLoginLink.onclick = activateLogin;
+
+        // Authentication logic using localStorage
+
+        function getUsers() {
+            return JSON.parse(localStorage.getItem("ecoUsers") || "[]");
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem("ecoUsers", JSON.stringify(users));
+        }
+
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            clearErrors();
+
+            const email = document.getElementById("login-email").value.trim().toLowerCase();
+            const password = document.getElementById("login-password").value;
+
+            const users = getUsers();
+            const user = users.find((u) => u.email === email && u.password === password);
+
+            if (user) {
+                // Redirect to Main.html after successful login
+                window.location.href = 'Main.html';
+            } else {
+                loginError.textContent = "Invalid email or password.";
+            }
+        });
+
+        signupForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            clearErrors();
+
+            const name = document.getElementById("signup-name").value.trim();
+            const email = document.getElementById("signup-email").value.trim().toLowerCase();
+            const password = document.getElementById("signup-password").value;
+            const confirmPassword = document.getElementById("signup-confirm-password").value;
+
+            if (!name || !email || !password || !confirmPassword) {
+                signupError.textContent = "Please fill out all fields.";
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                signupError.textContent = "Passwords do not match.";
+                return;
+            }
+
+            if (password.length < 6) {
+                signupError.textContent = "Password must be at least 6 characters.";
+                return;
+            }
+
+            let users = getUsers();
+            if (users.find((u) => u.email === email)) {
+                signupError.textContent = "Email already registered.";
+                return;
+            }
+
+            users.push({ name, email, password });
+            saveUsers(users);
+            alert('Welcome ${name}, your account has been created! Please log in.');
+            signupForm.reset();
+            activateLogin();
+        });
+    </script>
+</body>
+</html>

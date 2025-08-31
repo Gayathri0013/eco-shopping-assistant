@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eco Shopping Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://img.freepik.com/free-photo/greenery-frame-watercolor-green_53876-105303.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #90ee90;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(46, 240, 208, 0.379);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 50px;
+    }
+    /* Link wrapping cards */
+    .card-link {
+      text-decoration: none; /* Remove underline */
+      color: inherit;        /* Inherit text color */
+      display: block;        /* Make link cover entire card */
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    }
+    .card img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    @media (max-width: 900px) {
+      .columns {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="Main.html">Home</a>
+    <a href="cart.html">Cart</a>
+    <a href="orders.html">Orders</a>
+    <a href="account.html">Account</a>
+  </nav>
+  <header>
+    <h1>Eco Shopping Assistant</h1>
+    <p>Your sustainable guide to eco-friendly shopping</p>
+  </header>
+  <section class="columns">
+    <a href="clothes.html" class="card-link">
+      <div class="card">
+        <img src="https://omnitail.net/wp-content/uploads/2021/06/amazon-clothes-sm.png" alt="Sustainable Clothes" />
+        <h2>Clothes</h2>
+        <p>Discover sustainable fashion made with organic fabrics and ethical production practices.</p>
+      </div>
+    </a>
+    <a href="home-living.html" class="card-link">
+      <div class="card">
+        <img src="https://paintedcreativity.com/wp-content/uploads/2024/02/Eco-friendly-home_decor.webp" alt="Eco Home & Living" />
+        <h2>Home & Living</h2>
+        <p>Eco-friendly home essentials and décor that bring sustainability into your daily lifestyle.</p>
+      </div>
+    </a>
+    <a href="accessories-beauty.html" class="card-link">
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/top-view-frame-with-care-products-wooden-table_23-2148261058.jpg?semt=ais_hybrid&w=740" alt="Accessories and Beauty" />
+        <h2>Accessories & Beauty</h2>
+        <p>Shop natural skincare, eco-accessories, and beauty products that are kind to the planet.</p>
+      </div>
+    </a>
+  </section>
+</body>
+</html>
